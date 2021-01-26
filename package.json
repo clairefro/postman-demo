@@ -6,7 +6,8 @@
 	"scripts": {
 		"build": "webpack --mode production",
 		"start": "npm run build && node src/server/index.js",
-		"client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
+		"bak.client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
+		"client": "cd src/snoclient && snowpack dev",
 		"server": "nodemon src/server/index.js",
 		"dev": "concurrently \"npm run server\" \"npm run client\""
 	},
@@ -14,6 +15,7 @@
 	"license": "ISC",
 	"dependencies": {
 		"babel-polyfill": "^6.26.0",
+		"cors": "2.8.5",
 		"express": "^4.16.3",
 		"react": "^16.5.2",
 		"react-dom": "^16.5.2"
